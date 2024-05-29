@@ -9,8 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 #This will do
 
 # Configuration
-zoom_email = 'jay@pixeltests.com'
-zoom_password = 'sgmoid234A!'
+zoom_email = 'email'
+zoom_password = 'password'
 report_url = 'https://zoom.us/account/my/report/webinar'
 download_directory = '/Users/jayanthrasamsetti/Desktop'
 
