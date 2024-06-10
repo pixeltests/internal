@@ -7,3 +7,7 @@ b) Download the latest webinars
 
 2) Update weekly the upcoming webinar date (CRON)
 Frequency: Every Sunday
+
+#Pending files to upload
+1. ATS (Social Share)
+2. ATS CV Top 3 mistakes using LLMs
