@@ -1,3 +1,10 @@
+# Stable code
+
+# Next enhancements
+# 1. Run this on Cloud as a CRON Job
+# 2. File needs to read either csv or xlsx
+# 3. Add the Lead Score (Perhaps add Linkedin as well)
+
 import pandas as pd
 import numpy as np
 import csv
