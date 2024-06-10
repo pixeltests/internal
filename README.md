@@ -9,5 +9,6 @@ b) Download the latest webinars
 Frequency: Every Sunday
 
 #Pending files to upload
-1. ATS (Social Share)
-2. ATS CV Top 3 mistakes using LLMs
+1 Github upload folders
+2. ATS (Social Share)
+3. ATS CV Top 3 mistakes using LLMs
