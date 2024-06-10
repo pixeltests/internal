@@ -11,4 +11,4 @@ Frequency: Every Sunday
 #Pending files to upload
 1 Github upload folders
 2. ATS (Social Share)
-3. ATS CV Top 3 mistakes using LLMs
+3. ATS CV Top 3 mistakes using LLMs (via PhP only)
