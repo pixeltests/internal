@@ -1,3 +1,8 @@
+#1. Stable code
+#2. Is this better than the API version
+#3. Run this on Cloud as a Cron Job
+#4. Make sure the file that is download can be piped into the attendee_report_gsheet.py
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
