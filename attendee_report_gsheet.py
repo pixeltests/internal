@@ -1,12 +1,38 @@
 import pandas as pd
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+import numpy as np
+import csv
+import io
 
 # Load the CSV file into a pandas DataFrame
 # local_path = '/Users/jayanthrasamsetti/Downloads'
-csv_file_path = '88478605779 - Attendee Report (2).csv'
 
-df = pd.read_csv(csv_file_path, sep=',', header=11, index_col=False)
+def find_attendee_details_and_read(file_path):
+    # Read the file line by line
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+        
+    # Find the index of the "Attendee Details" row
+    attendee_row_index = -1
+    for i, line in enumerate(lines):
+        if "Attendee Details" in line:
+            attendee_row_index = i
+            break
+
+    if attendee_row_index == -1:
+        raise ValueError("Attendee Details row not found")
+
+    # Read the file into a DataFrame starting from the row after "Attendee Details"
+    df = pd.read_csv(file_path, skiprows=attendee_row_index + 1, index_col=False)
+    return df
+
+# Read the first 20 rows of the CSV file after the "Attendee Details" row
+# csv_file_path = '88478605779 - Attendee Report (5).csv'
+# csv_file_path = '87888674122 - Attendee Report.csv'
+csv_file_path = '88478605779 - Attendee Report (12).csv'
+
+df = find_attendee_details_and_read(csv_file_path)
+
+# df.head(30)
 
 df['Time in Session (minutes)'] = pd.to_numeric(df['Time in Session (minutes)'], errors='coerce')
 
@@ -47,9 +73,9 @@ columns_to_drop = ['First Name', 'Last Name', 'Attended', 'Approval Status','Reg
 df.drop(columns=columns_to_drop, inplace=True)
 
 # Group the DataFrame by 'Email' and aggregate the data
-grouped_df = df.groupby('Email', as_index=False).agg({
+grouped_df = df.groupby('Phone', as_index=False).agg({
     'User Name (Original Name)': 'first',
-    'Phone': 'first',
+    'Email': 'first',
     'Job Title': 'first',
     'Time in Session (minutes)': 'sum',
     'Country/Region Name': 'first'
