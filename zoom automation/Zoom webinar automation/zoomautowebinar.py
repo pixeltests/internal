@@ -5,8 +5,8 @@ import base64
 import os
 
 # Zoom OAuth credentials
-CLIENT_ID = 'TCIPe9UJSQiwCGSFU7vEzg'
-CLIENT_SECRET = 'i55SqNTDdwVeSmKDeDqCciE2sEoEluiI'
+CLIENT_ID = 'enter'
+CLIENT_SECRET = 'entuer'
 REDIRECT_URI = 'https://go.pixeltests.com/'
 
 TOKEN_FILE = 'zoom_tokens.json'
